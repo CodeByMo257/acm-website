@@ -4,14 +4,15 @@ interface Props {
   alt: string;
   screenBg?: string;
   padding?: string;
+  fit?: "contain" | "cover";
 }
-const { src, alt, screenBg = "#ffffff", padding = "18%" } = Astro.props;
+const { src, alt, screenBg = "#ffffff", padding = "18%", fit = "contain" } = Astro.props;
 ---
 
 <div class="phone-mockup">
   <div class="phone-frame">
     <div class="phone-screen" style={`background:${screenBg};`}>
-      <img src={src} alt={alt} style={`padding:${padding};`} />
+      <img src={src} alt={alt} style={`padding:${fit === "cover" ? "0" : padding};object-fit:${fit};`} />
       <div class="phone-sheen"></div>
     </div>
     <div class="phone-island"></div>
