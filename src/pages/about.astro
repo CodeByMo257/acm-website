@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const who = [
+  "Starting from scratch",
+  "Growing beyond their original brand",
+  "Operating with an outdated website",
+  "Struggling to stay consistent online",
+  "Unsure what to post",
+  "Difficult to find on Google",
+  "Managing several disconnected digital platforms",
+  "Ready to look as professional online as they are in real life",
+];
+---
+
+<Layout
+  title="About"
+  description="Acadiana Creative Marketing was built by small business owners Rachel Baldwin and Monique Walker, who understand what it means to wear too many hats."
+>
+  <section class="bg-navy relative overflow-hidden">
+    <img src="/images/logo/fleur-de-lis.png" alt="" class="pointer-events-none select-none absolute -left-20 -top-16 w-72 opacity-[0.06]" />
+    <div class="relative mx-auto max-w-3xl px-6 pt-20 pb-16 text-center">
+      <p class="caps text-gold text-xs tracking-[0.25em] mb-5">About ACM</p>
+      <h1 class="font-display text-cream text-4xl sm:text-5xl leading-tight">
+        We Know Small Business Because We Live It.
+      </h1>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-24 text-center">
+    <p class="text-ink-soft text-[17px] leading-relaxed mb-5">
+      Acadiana Creative Marketing was built by small business owners who understand what it means to wear too many hats.
+    </p>
+    <p class="text-ink-soft text-[17px] leading-relaxed mb-5">
+      We know marketing often gets pushed to the bottom of the list — not because it isn&rsquo;t important, but because customers, employees, estimates, invoices, schedules, and everyday operations have to come first. That&rsquo;s why ACM was created.
+    </p>
+    <p class="font-display text-navy text-2xl italic mt-10 mb-2">Rachel Baldwin &amp; Monique Walker</p>
+    <p class="text-ink-soft text-[15px]">Owners, Acadiana Creative Marketing</p>
+  </section>
+
+  <section class="bg-navy-soft/[0.04] border-y border-navy/10">
+    <div class="mx-auto max-w-3xl px-6 py-20 text-center">
+      <p class="text-ink-soft text-[16px] leading-relaxed">
+        From branding and websites to content, social media, Google visibility, and digital consulting, our goal is to help businesses stop guessing about their online presence and start using it intentionally.
+      </p>
+      <p class="font-display italic text-2xl text-navy mt-8">
+        Local businesses are good at what they do. We help make sure their digital presence shows it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Strategy first -->
+  <section class="mx-auto max-w-5xl px-6 py-24">
+    <div class="grid md:grid-cols-2 gap-14 items-start">
+      <div>
+        <p class="caps text-gold text-xs tracking-[0.2em] mb-4">Why ACM</p>
+        <h2 class="font-display text-navy text-3xl sm:text-4xl leading-tight">
+          Strategy Before Stuff.
+        </h2>
+      </div>
+      <div class="text-ink-soft text-[16px] leading-relaxed space-y-4 pt-1">
+        <p>Before recommending anything, we look at where your business is now — your branding, your website, your Google presence, your social channels, your messaging, your content, your customer experience.</p>
+        <p>Then we determine what needs attention first. Because sometimes you don&rsquo;t need more marketing. You just need to fix what&rsquo;s already there.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we help -->
+  <section class="bg-navy-soft/[0.04] border-y border-navy/10">
+    <div class="mx-auto max-w-4xl px-6 py-24">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="caps text-gold text-xs tracking-[0.2em] mb-4">Who You Help</p>
+        <h2 class="font-display text-navy text-3xl sm:text-4xl">Built for Local Business</h2>
+        <p class="text-ink-soft text-[15px] mt-4">ACM works with locally owned businesses that may be:</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        {who.map((item) => (
+          <span class="bg-white border border-navy/10 rounded-full px-5 py-2.5 text-[14px] text-ink-soft">{item}</span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Ready to Stand Out?"
+    body="Let's start with where your business is today — not with a package or a pitch."
+  />
+</Layout>

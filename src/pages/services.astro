@@ -1,0 +1,79 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const services = [
+  { title: "Social Media Management", desc: "Consistent, intentional social media content that keeps your business active, recognizable, and connected to your customers — including Facebook and Instagram strategy and consistent short-form Reels." },
+  { title: "Professional Content Creation", desc: "Photo and video content captured specifically for your brand, including professional content shoots, Reels, product content, and branded visuals." },
+  { title: "Branding & Rebranding", desc: "From logo updates to messaging and visual consistency, we help businesses create a brand that accurately reflects who they are today." },
+  { title: "Website Design & Optimization", desc: "New websites, website cleanups, content updates, mobile optimization, messaging improvements, and lead-capture strategy designed to turn your website into a useful business tool." },
+  { title: "Google & Local SEO", desc: "Google Business optimization, local SEO basics, and review generation — improving how your business appears online for customers searching in your area." },
+  { title: "Digital Consulting & Strategy", desc: "Not sure what you actually need? We evaluate your current digital presence, identify the gaps, and create a prioritized plan instead of selling you services you don't need." },
+];
+---
+
+<Layout
+  title="Services"
+  description="Social media, content creation, branding, websites, local SEO, digital consulting, and systems automation — custom-quoted digital solutions for local businesses."
+>
+  <section class="bg-navy relative overflow-hidden">
+    <img src="/images/logo/fleur-de-lis.png" alt="" class="pointer-events-none select-none absolute -right-20 -top-20 w-80 opacity-[0.06]" />
+    <div class="relative mx-auto max-w-3xl px-6 pt-20 pb-16 text-center">
+      <p class="caps text-gold text-xs tracking-[0.25em] mb-5">What We Offer</p>
+      <h1 class="font-display text-cream text-4xl sm:text-5xl mb-6 leading-tight">
+        Digital Solutions Built Around Your Business
+      </h1>
+      <p class="text-cream/75 text-[16px] max-w-xl mx-auto leading-relaxed">
+        Every project starts the same way: we look at the whole picture before recommending anything. Below is everything we can help with — you won&rsquo;t need all of it, and that&rsquo;s the point.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-6 py-24">
+    <div class="grid sm:grid-cols-2 gap-6">
+      {services.map((s, i) => (
+        <div class="bg-white border border-navy/10 rounded-sm p-8">
+          <span class="caps text-gold text-[11px] tracking-[0.2em]">0{i + 1}</span>
+          <h3 class="font-display text-xl text-navy mt-2 mb-3">{s.title}</h3>
+          <p class="text-[15px] text-ink-soft leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-8 bg-navy rounded-sm p-9 sm:p-11 relative overflow-hidden">
+      <img src="/images/logo/fleur-de-lis.png" alt="" class="pointer-events-none select-none absolute -right-10 -bottom-10 w-40 opacity-[0.08]" />
+      <p class="caps text-gold text-[11px] tracking-[0.2em] mb-3">The Differentiator</p>
+      <h3 class="font-display text-2xl text-cream mb-3">Digital Systems &amp; Automation</h3>
+      <p class="text-cream/70 text-[15px] leading-relaxed max-w-2xl">
+        Beyond content and design, we help connect business systems, lead workflows, CRM processes, automated follow-up, and operational tools — the part that separates ACM from a typical social-media freelancer.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-navy-soft/[0.04] border-y border-navy/10">
+    <div class="mx-auto max-w-5xl px-6 py-24">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="caps text-gold text-xs tracking-[0.2em] mb-4">How We Work</p>
+        <h2 class="font-display text-navy text-3xl sm:text-4xl">Strategy Before Stuff</h2>
+        <p class="text-ink-soft text-[15px] mt-4 leading-relaxed">
+          We don&rsquo;t immediately prescribe a website, a social package, a rebrand, or an ad campaign. We evaluate first — because sometimes you don&rsquo;t need more marketing, you just need to fix what&rsquo;s already there.
+        </p>
+      </div>
+      <ProcessSteps />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-6 py-24 text-center">
+    <p class="caps text-gold text-xs tracking-[0.2em] mb-4">Pricing</p>
+    <h2 class="font-display text-navy text-3xl mb-5">Every Quote Is Custom.</h2>
+    <p class="text-ink-soft text-[16px] leading-relaxed">
+      We don&rsquo;t sell off a price list, and we don&rsquo;t believe in one-size-fits-all packages. After the Assess step, you&rsquo;ll get a plan and a quote built specifically around what your business needs — nothing you don&rsquo;t.
+    </p>
+  </section>
+
+  <CtaBand
+    heading="Not Sure Which Services You Need?"
+    body="That's exactly what the Assess step is for. Tell us where your business stands, and we'll help you figure out what to tackle first."
+  />
+</Layout>

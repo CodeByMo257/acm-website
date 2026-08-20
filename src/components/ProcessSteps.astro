@@ -1,0 +1,17 @@
+---
+const steps = [
+  { n: "1", title: "Assess", desc: "We learn about your business, your goals, your customers, and where your digital presence stands today." },
+  { n: "2", title: "Build the Strategy", desc: "We identify the biggest opportunities and build a practical plan based on what your business actually needs." },
+  { n: "3", title: "Execute", desc: "We help implement it — branding, content, social media, website work, SEO, or ongoing support." },
+];
+---
+
+<div class="grid gap-6 sm:grid-cols-3">
+  {steps.map((step) => (
+    <div class="border border-navy/10 bg-white/60 rounded-sm p-7">
+      <span class="font-display text-4xl text-gold">{step.n}</span>
+      <h3 class="font-display text-xl text-navy mt-3 mb-2">{step.title}</h3>
+      <p class="text-[15px] text-ink-soft leading-relaxed">{step.desc}</p>
+    </div>
+  ))}
+</div>

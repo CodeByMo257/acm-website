@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProcessSteps from '../components/ProcessSteps.astro';
+import CtaBand from '../components/CtaBand.astro';
+
+const services = [
+  { title: "Social Media Management", desc: "Consistent, intentional content that keeps your business active, recognizable, and connected." },
+  { title: "Professional Content Creation", desc: "Photo and video shot specifically for your brand — shoots, Reels, product content, branded visuals." },
+  { title: "Branding & Rebranding", desc: "From logo updates to messaging, we help your brand reflect who you are today." },
+  { title: "Website Design & Optimization", desc: "New builds, cleanups, mobile optimization, and messaging that turns your site into a working tool." },
+  { title: "Google & Local SEO", desc: "Show up clearly when local customers search for exactly what you offer." },
+  { title: "Digital Consulting & Strategy", desc: "We evaluate your presence, find the gaps, and build a prioritized plan — not a sales pitch." },
+];
+---
+
+<Layout
+  title="Home"
+  description="Acadiana Creative Marketing helps local businesses look professional, get found, and grow — branding, content, websites, social media, and SEO, built by small business owners."
+>
+  <!-- Hero -->
+  <section class="bg-navy relative overflow-hidden">
+    <img src="/images/logo/fleur-de-lis.png" alt="" class="pointer-events-none select-none absolute -left-24 top-1/2 -translate-y-1/2 w-[28rem] opacity-[0.05]" />
+    <div class="relative mx-auto max-w-4xl px-6 pt-24 pb-28 text-center">
+      <p class="caps text-gold text-xs tracking-[0.25em] mb-6">Digital Solutions &amp; Strategy for Small Businesses</p>
+      <h1 class="font-display text-cream text-4xl sm:text-6xl leading-[1.08] mb-7">
+        Helping Small Businesses <span class="text-gold italic">Stand Out.</span>
+      </h1>
+      <p class="text-cream/75 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+        Branding, content, websites, social media, SEO, and strategy designed to help your business look professional, get found, and grow. Digital solutions built by small business owners, for small business owners.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contact" class="caps text-[13px] tracking-[0.12em] bg-gold text-navy px-8 py-4 rounded-sm hover:bg-gold-bright transition-colors">
+          Let&rsquo;s Talk About Your Business
+        </a>
+        <a href="/services" class="caps text-[13px] tracking-[0.12em] border border-cream/30 text-cream px-8 py-4 rounded-sm hover:border-gold hover:text-gold transition-colors">
+          Explore Our Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Problem -->
+  <section class="mx-auto max-w-5xl px-6 py-24">
+    <div class="grid md:grid-cols-2 gap-14 items-start">
+      <div>
+        <p class="caps text-gold text-xs tracking-[0.2em] mb-4">The Problem</p>
+        <h2 class="font-display text-navy text-3xl sm:text-4xl leading-tight">
+          Your business deserves more than a scattered digital presence.
+        </h2>
+      </div>
+      <div class="text-ink-soft text-[16px] leading-relaxed space-y-4 pt-1">
+        <p>Running a business is already a full-time job. Keeping up with your website, social media, Google presence, branding, photography, video, and everything else online can quickly become another one.</p>
+        <p>That&rsquo;s where ACM comes in. We help identify what&rsquo;s working, what&rsquo;s missing, and what needs attention — then create a practical strategy to move your business forward.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategy before stuff -->
+  <section class="bg-navy-soft/[0.04] border-y border-navy/10">
+    <div class="mx-auto max-w-3xl px-6 py-24 text-center">
+      <h2 class="font-display text-navy text-3xl sm:text-4xl mb-6 leading-tight">
+        You Don&rsquo;t Need More Marketing Noise.<br class="hidden sm:block" /> You Need a Plan.
+      </h2>
+      <div class="text-ink-soft text-[16px] leading-relaxed space-y-1.5 mb-8">
+        <p>Maybe your website hasn&rsquo;t been updated in years.</p>
+        <p>Maybe your logo no longer represents the business.</p>
+        <p>Maybe your Facebook, Instagram, Google profile, and website all say different things.</p>
+        <p>Maybe you know you need better content — but you don&rsquo;t have time to create it.</p>
+        <p>Or maybe you simply don&rsquo;t know where to start.</p>
+      </div>
+      <p class="font-display italic text-2xl text-gold mb-6">We do.</p>
+      <p class="text-ink-soft text-[16px] leading-relaxed max-w-xl mx-auto">
+        ACM helps businesses look at the entire digital picture, prioritize what matters, and build a presence that feels professional, consistent, and intentional.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services teaser -->
+  <section class="mx-auto max-w-6xl px-6 py-24">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <p class="caps text-gold text-xs tracking-[0.2em] mb-4">What We Offer</p>
+      <h2 class="font-display text-navy text-3xl sm:text-4xl">Digital Solutions Built Around Your Business</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {services.map((s) => (
+        <div class="bg-white border border-navy/10 rounded-sm p-7 hover:border-gold/50 transition-colors">
+          <h3 class="font-display text-lg text-navy mb-2">{s.title}</h3>
+          <p class="text-[14.5px] text-ink-soft leading-relaxed">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+    <div class="text-center mt-12">
+      <a href="/services" class="caps text-[13px] tracking-[0.12em] text-navy border-b border-gold pb-1 hover:text-gold transition-colors">
+        See Full Services &amp; Digital Systems →
+      </a>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="bg-navy-soft/[0.04] border-y border-navy/10">
+    <div class="mx-auto max-w-5xl px-6 py-24">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <p class="caps text-gold text-xs tracking-[0.2em] mb-4">Your Process</p>
+        <h2 class="font-display text-navy text-3xl sm:text-4xl">A Simple, Three-Step Framework</h2>
+      </div>
+      <ProcessSteps />
+    </div>
+  </section>
+
+  <CtaBand
+    heading="Ready to Stand Out?"
+    body="Tell us where your business is today, and we'll help you figure out the next step — no packages, no pressure, just a plan built around what you actually need."
+  />
+</Layout>

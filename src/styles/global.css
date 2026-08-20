@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,500;1,600&family=Oswald:wght@400;500;600;700&family=Jost:ital,wght@0,400;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-caps: "Oswald", "Arial Narrow", sans-serif;
+  --font-tagline: "Jost", "Century Gothic", sans-serif;
+
+  --color-navy: #111e2e;
+  --color-navy-deep: #0b141f;
+  --color-navy-soft: #1c2c42;
+  --color-gold: #c79950;
+  --color-gold-bright: #e0b96b;
+  --color-cream: #f4efe3;
+  --color-ink: #1b1f27;
+  --color-ink-soft: #55606f;
+  --color-line: #e4ded0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-tagline);
+  color: var(--color-ink);
+  background: var(--color-cream);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.caps {
+  font-family: var(--font-caps);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
