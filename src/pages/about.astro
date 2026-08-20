@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CtaBand from '../components/CtaBand.astro';
+import TeamPhoto from '../components/TeamPhoto.astro';
 
 const who = [
   "Starting from scratch",
@@ -28,15 +29,33 @@ const who = [
     </div>
   </section>
 
-  <section class="mx-auto max-w-3xl px-6 py-24 text-center">
+  <section class="mx-auto max-w-3xl px-6 pt-24 pb-8 text-center">
     <p class="text-ink-soft text-[17px] leading-relaxed mb-5">
       Acadiana Creative Marketing was built by small business owners who understand what it means to wear too many hats.
     </p>
-    <p class="text-ink-soft text-[17px] leading-relaxed mb-5">
+    <p class="text-ink-soft text-[17px] leading-relaxed">
       We know marketing often gets pushed to the bottom of the list — not because it isn&rsquo;t important, but because customers, employees, estimates, invoices, schedules, and everyday operations have to come first. That&rsquo;s why ACM was created.
     </p>
-    <p class="font-display text-navy text-2xl italic mt-10 mb-2">Rachel Baldwin &amp; Monique Walker</p>
-    <p class="text-ink-soft text-[15px]">Owners, Acadiana Creative Marketing</p>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-6 pt-16 pb-28">
+    <div class="grid sm:grid-cols-2 gap-x-10 gap-y-20 place-items-center">
+      <TeamPhoto
+        src="/images/team/rachel.png"
+        alt="Rachel Baldwin, co-owner of Acadiana Creative Marketing"
+        name="Rachel Baldwin"
+        role="Co-Owner"
+        note="Rachel!"
+      />
+      <TeamPhoto
+        src="/images/team/monique.png"
+        alt="Monique Walker, co-owner of Acadiana Creative Marketing"
+        name="Monique Walker"
+        role="Co-Owner"
+        note="Monique!"
+        flip
+      />
+    </div>
   </section>
 
   <section class="bg-navy-soft/[0.04] border-y border-navy/10">

@@ -1,0 +1,169 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  name: string;
+  role: string;
+  note: string;
+  flip?: boolean;
+}
+const { src, alt, name, role, note, flip = false } = Astro.props;
+---
+
+<div class:list={["team-photo", { flip }]}>
+  <div class="photo-stage">
+    <svg class="doodle scribble" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M108 14C150 10 196 40 200 88C204 138 172 190 116 198C64 206 18 172 12 118C7 70 42 22 92 15C98 14 102 14 108 14Z"
+        stroke="var(--color-gold)" stroke-width="3.5" stroke-linecap="round"/>
+    </svg>
+
+    <svg class="doodle star star-1" viewBox="0 0 60 60" fill="var(--color-gold)" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 0L35 25L60 30L35 35L30 60L25 35L0 30L25 25Z"/>
+    </svg>
+
+    <svg class="doodle star star-2" viewBox="0 0 60 60" fill="var(--color-navy)" xmlns="http://www.w3.org/2000/svg">
+      <path d="M30 0L35 25L60 30L35 35L30 60L25 35L0 30L25 25Z"/>
+    </svg>
+
+    <svg class="doodle arrow" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 8C34 6 78 22 100 58" stroke="var(--color-gold)" stroke-width="3" stroke-linecap="round"/>
+      <path d="M84 52C90 58 96 64 102 68C97 62 95 54 96 44" stroke="var(--color-gold)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+
+    <span class="doodle note-text">{note}</span>
+
+    <img src={src} alt={alt} class="cutout" />
+  </div>
+
+  <p class="font-display text-navy text-2xl mt-6 mb-1">{name}</p>
+  <p class="caps text-gold text-[11px] tracking-[0.18em]">{role}</p>
+</div>
+
+<style>
+  .team-photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo-stage {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cutout {
+    position: relative;
+    z-index: 3;
+    height: 340px;
+    width: auto;
+    filter: drop-shadow(0 25px 20px rgba(17, 30, 46, 0.25)) drop-shadow(0 8px 8px rgba(17, 30, 46, 0.15));
+    transform: rotate(-3deg);
+    transition: transform 0.4s ease;
+  }
+
+  .team-photo.flip .cutout {
+    transform: rotate(3deg);
+  }
+
+  .photo-stage:hover .cutout {
+    transform: rotate(0deg) scale(1.02);
+  }
+
+  .doodle {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .scribble {
+    width: 260px;
+    height: 260px;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-6deg);
+    opacity: 0.7;
+    z-index: 1;
+  }
+
+  .team-photo.flip .scribble {
+    transform: translateX(-50%) rotate(6deg);
+  }
+
+  .star-1 {
+    width: 26px;
+    height: 26px;
+    top: 6%;
+    right: 4%;
+    z-index: 4;
+  }
+
+  .star-2 {
+    width: 16px;
+    height: 16px;
+    bottom: 20%;
+    left: 2%;
+    z-index: 4;
+    opacity: 0.85;
+  }
+
+  .team-photo.flip .star-1 {
+    right: auto;
+    left: 4%;
+  }
+  .team-photo.flip .star-2 {
+    left: auto;
+    right: 2%;
+  }
+
+  .arrow {
+    width: 84px;
+    height: auto;
+    bottom: -8px;
+    right: -34px;
+    z-index: 4;
+    transform: scaleX(1);
+  }
+
+  .team-photo.flip .arrow {
+    right: auto;
+    left: -34px;
+    transform: scaleX(-1);
+  }
+
+  .note-text {
+    position: absolute;
+    bottom: -34px;
+    right: -30px;
+    font-family: var(--font-hand);
+    font-size: 22px;
+    color: var(--color-gold);
+    font-weight: 600;
+    white-space: nowrap;
+    z-index: 4;
+    transform: rotate(-4deg);
+  }
+
+  .team-photo.flip .note-text {
+    right: auto;
+    left: -10px;
+    transform: rotate(4deg);
+  }
+
+  @media (max-width: 640px) {
+    .cutout {
+      height: 260px;
+    }
+    .scribble {
+      width: 200px;
+      height: 200px;
+      top: -10px;
+    }
+    .note-text {
+      font-size: 18px;
+      bottom: -28px;
+    }
+  }
+</style>
