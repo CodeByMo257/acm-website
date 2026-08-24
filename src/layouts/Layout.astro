@@ -64,6 +64,22 @@ const schema = {
       gtag('js', new Date());
       gtag('config', 'G-QNNJ44KK27');
     </script>
+
+    <!-- Metricool tracker -->
+    <script>
+      function loadScript(a: () => void) {
+        var b = document.getElementsByTagName('head')[0],
+          c = document.createElement('script');
+        c.type = 'text/javascript';
+        c.src = 'https://tracker.metricool.com/resources/be.js';
+        c.onreadystatechange = a;
+        c.onload = a;
+        b.appendChild(c);
+      }
+      loadScript(function () {
+        (window as any).beTracker.t({ hash: '81a69f6728b1437efd6907d830183eb1' });
+      });
+    </script>
   </head>
   <body class="bg-cream">
     <Header />
