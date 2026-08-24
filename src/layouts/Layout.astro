@@ -9,6 +9,30 @@ interface Props {
 }
 
 const { title, description } = Astro.props;
+
+const siteUrl = "https://acadianacreative.org";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Acadiana Creative Marketing",
+  alternateName: "ACM",
+  description:
+    "Digital solutions and strategy for small businesses — branding, content, websites, social media, and local SEO, built by small business owners for small business owners.",
+  url: siteUrl,
+  logo: `${siteUrl}/images/logo/acm-logo-light.svg`,
+  image: `${siteUrl}/images/logo/acm-logo-light.svg`,
+  email: "info@acadianacreative.org",
+  sameAs: ["https://www.facebook.com/profile.php?id=61589385400418"],
+  areaServed: {
+    "@type": "AdministrativeArea",
+    name: "Acadiana, Louisiana",
+  },
+  founder: [
+    { "@type": "Person", name: "Rachel Baldwin" },
+    { "@type": "Person", name: "Monique Walker" },
+  ],
+};
 ---
 
 <!doctype html>
@@ -23,6 +47,9 @@ const { title, description } = Astro.props;
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="description" content={description} />
     <title>{title} · Acadiana Creative Marketing</title>
+    <link rel="canonical" href={new URL(Astro.url.pathname, siteUrl).toString()} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QNNJ44KK27"></script>
